@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>경로 지도 · 중앙알프스 종주</title>
+<style>
+  :root {
+    --route:#1552a3; --ridge:#2f6b4f; --contour:#8a5f2a;
+    --ink:#16222c; --ink-2:#4c5c6b; --ink-3:#7d8c99;
+    --paper:#f1f4f7; --card:#ffffff; --line:#d5dde5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --route:#79aeee; --ridge:#6cbd95; --contour:#cf9f5c;
+      --ink:#e4ebf2; --ink-2:#a3b2c0; --ink-3:#7c8b99;
+      --paper:#0d151d; --card:#16212c; --line:#2a3947; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.6; -webkit-text-size-adjust:100%; }
+  .wrap { max-width:52rem; margin:0 auto; padding:2.4rem 1.1rem 4rem; }
+  .eyebrow { font-size:.72rem; font-weight:800; letter-spacing:.16em;
+             text-transform:uppercase; color:var(--route); }
+  h1 { margin:.4rem 0 0; font-size:clamp(1.4rem,5vw,1.95rem); font-weight:800;
+       letter-spacing:-.02em; }
+  .rule { height:3px; width:3.2rem; background:var(--route); border-radius:2px; margin:.8rem 0 1rem; }
+  .sub { margin:0 0 1.8rem; color:var(--ink-2); font-size:.94rem; }
+  a.back { display:inline-block; margin-bottom:1.6rem; color:var(--route);
+           text-decoration:none; font-size:.88rem; font-weight:700; }
+  a.back:hover { text-decoration:underline; }
+  figure { margin:0 0 2.2rem; }
+  figcaption { font-size:.86rem; color:var(--ink-2); margin-bottom:.5rem; }
+  figcaption b { color:var(--ink); }
+  img { width:100%; height:auto; display:block; border:1px solid var(--line);
+        border-radius:7px; background:var(--card); }
+  .legend { display:flex; flex-wrap:wrap; gap:.9rem; margin:.55rem 0 0;
+            font-size:.8rem; color:var(--ink-2); }
+  .legend span { display:inline-flex; align-items:center; gap:.35rem; }
+  .sw { width:15px; height:3px; border-radius:2px; }
+  footer { border-top:1px solid var(--line); padding-top:1rem;
+           font-size:.79rem; color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="./">← 문서 목록</a>
+
+  <div class="eyebrow">Central Alps · Route Maps</div>
+  <h1>경로 지도</h1>
+  <div class="rule"></div>
+  <p class="sub">일본 국토지리원 지형도에 실제 경로를 표시했습니다. 등산로는 OpenStreetMap의 트레일 데이터,
+  버스 구간은 실제 도로 경로입니다. 직선으로 이은 곳은 로프웨이뿐입니다.</p>
+
+  <div class="legend">
+    <span><i class="sw" style="background:#1552a3"></i>7/31</span>
+    <span><i class="sw" style="background:#2f6b4f"></i>8/1</span>
+    <span><i class="sw" style="background:#8a5f2a"></i>8/2</span>
+    <span><i class="sw" style="background:#64707c"></i>전용버스</span>
+  </div>
+
+  <figure style="margin-top:1.6rem">
+    <figcaption><b>① 광역</b> — 나고야 주부공항에서 중앙알프스를 거쳐 도코나메까지. 전용버스 편도 약 187km, 2시간 30분.</figcaption>
+    <img src="map_wide.jpg" alt="나고야에서 중앙알프스를 거쳐 도코나메로 이어지는 광역 경로 지도" loading="lazy">
+  </figure>
+
+  <figure>
+    <figcaption><b>② 산행 상세</b> — 센죠지키에서 카쓰라고바까지 걷는 구간 11.5km. 마노세 능선의 굽이와 하산길 지그재그가 실제 형상입니다.</figcaption>
+    <img src="map_hike.jpg" alt="센죠지키에서 카쓰라고바까지 산행 구간 상세 지도" loading="lazy">
+  </figure>
+
+  <footer>
+    地図：国土地理院タイル（淡色地図・陰影起伏図）／経路：OpenStreetMap · OSRM<br>
+    기상·등산로 상태는 변동 정보입니다. 출발 전날과 당일의 공식 공지, 산장 직원, 현지 가이드의 판단이 우선합니다.
+  </footer>
+
+</div>
+</body>
+</html>

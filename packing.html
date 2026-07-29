@@ -7,7 +7,102 @@
 <title>짐싸기 체크리스트 · 김석현 개인용</title>
 </head>
 <body>
+<style>
+  :root {
+    --accent:#2f5d3f; --tr:#8a5f2a; --cab:#1552a3; --bp:#6b4a86; --alert:#b3261e;
+    --ink:#16221b; --ink-2:#4b5c51; --ink-3:#7d8d83;
+    --paper:#f2f5f2; --card:#ffffff; --line:#d3ddd6; --band:#e5ede7;
+    --alert-bg:#fbeceb; --ok-bg:#eaf1ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --accent:#7cc295; --tr:#cf9f5c; --cab:#79aeee; --bp:#b795d8; --alert:#f08379;
+      --ink:#e6efe9; --ink-2:#a6b7ac; --ink-3:#7e8f85;
+      --paper:#0d1410; --card:#16211a; --line:#293a30; --band:#1c2a22;
+      --alert-bg:#2c1a19; --ok-bg:#152720; }
+  }
+  :root[data-theme="dark"] {
+    --accent:#7cc295; --tr:#cf9f5c; --cab:#79aeee; --bp:#b795d8; --alert:#f08379;
+    --ink:#e6efe9; --ink-2:#a6b7ac; --ink-3:#7e8f85;
+    --paper:#0d1410; --card:#16211a; --line:#293a30; --band:#1c2a22;
+    --alert-bg:#2c1a19; --ok-bg:#152720;
+  }
+  :root[data-theme="light"] {
+    --accent:#2f5d3f; --tr:#8a5f2a; --cab:#1552a3; --bp:#6b4a86; --alert:#b3261e;
+    --ink:#16221b; --ink-2:#4b5c51; --ink-3:#7d8d83;
+    --paper:#f2f5f2; --card:#ffffff; --line:#d3ddd6; --band:#e5ede7;
+    --alert-bg:#fbeceb; --ok-bg:#eaf1ec;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+    font-size:15.5px; line-height:1.55; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; }
+  .wrap { max-width:44rem; margin:0 auto; padding:2.2rem 1.1rem 4rem;
+          display:flex; flex-direction:column; gap:1.4rem; }
 
+  header { border-bottom:2px solid var(--accent); padding-bottom:.6rem; }
+  .eyebrow { font-size:.71rem; font-weight:800; letter-spacing:.15em;
+             text-transform:uppercase; color:var(--accent); }
+  h1 { margin:.35rem 0 .4rem; font-size:clamp(1.35rem,5vw,1.85rem);
+       font-weight:800; letter-spacing:-.02em; }
+  .sub { margin:0; color:var(--ink-2); font-size:.9rem; }
+  .private { display:inline-block; margin-top:.45rem; font-size:.75rem; font-weight:700;
+             color:var(--alert); border:1px solid var(--alert); border-radius:4px;
+             padding:.1rem .4rem; }
+
+  h2 { margin:0 0 .2rem; font-size:1.05rem; font-weight:800; letter-spacing:-.01em; }
+  h2 .n { font-size:.72rem; font-weight:800; color:var(--ink-3);
+          letter-spacing:.06em; margin-right:.45rem; }
+  h3 { margin:.9rem 0 .3rem; font-size:.88rem; font-weight:800; color:var(--ink-2);
+       letter-spacing:.02em; }
+  p { margin:0 0 .55rem; } p:last-child { margin-bottom:0; }
+
+  .box { background:var(--card); border:1px solid var(--line); border-radius:8px;
+         padding:.85rem .95rem; border-left:5px solid var(--c,var(--accent)); }
+  .box.tr { --c:var(--tr); } .box.cab { --c:var(--cab); } .box.bp { --c:var(--bp); }
+  .where { font-size:.78rem; color:var(--ink-3); margin-bottom:.55rem; }
+  .spec { font-size:.78rem; font-weight:700; color:var(--c,var(--accent)); margin-bottom:.5rem; }
+
+  ul.ck { list-style:none; margin:0; padding:0; }
+  ul.ck li { position:relative; padding:.24rem 0 .24rem 1.45rem;
+             border-bottom:1px dotted var(--line); font-size:.93rem; }
+  ul.ck li:last-child { border-bottom:none; }
+  ul.ck li::before { content:""; position:absolute; left:0; top:.5em;
+    width:.72rem; height:.72rem; border:1.5px solid var(--ink-3); border-radius:3px; }
+  ul.ck li small { color:var(--ink-3); font-size:.82rem; }
+  ul.ck li .q { color:var(--tr); font-weight:700; }
+  ul.ck.two { column-count:2; column-gap:1.4rem; }
+  ul.ck.two li { break-inside:avoid; }
+  ul.plain { margin:0; padding-left:1.1rem; font-size:.9rem; }
+  ul.plain li { margin-bottom:.2rem; }
+
+  .warn { background:var(--alert-bg); border:1px solid var(--alert); border-left-width:5px;
+          border-radius:8px; padding:.85rem .95rem; }
+  .warn .tag, .rev .tag, .must .tag { display:block; font-size:.7rem; font-weight:800;
+          letter-spacing:.1em; text-transform:uppercase; margin-bottom:.25rem; }
+  .warn .tag { color:var(--alert); }
+  .must { background:var(--ok-bg); border:1px solid var(--accent); border-left-width:5px;
+          border-radius:8px; padding:.85rem .95rem; }
+  .must .tag { color:var(--accent); }
+  .rev { background:var(--card); border:1px dashed var(--tr); border-radius:8px;
+         padding:.85rem .95rem; }
+  .rev .tag { color:var(--tr); }
+
+  .scroll { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td { text-align:left; padding:.35rem .5rem; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  thead th { background:var(--band); font-size:.72rem; font-weight:800;
+             letter-spacing:.04em; color:var(--ink-2); white-space:nowrap; }
+  tbody tr:last-child td { border-bottom:none; }
+  caption { caption-side:bottom; text-align:left; padding-top:.4rem;
+            font-size:.77rem; color:var(--ink-3); }
+
+  strong { font-weight:700; }
+  .hi { color:var(--alert); font-weight:700; }
+  footer { border-top:1px solid var(--line); padding-top:.85rem;
+           font-size:.78rem; color:var(--ink-3); }
+</style>
 
 <div class="wrap">
 

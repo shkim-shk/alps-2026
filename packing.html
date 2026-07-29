@@ -7,102 +7,7 @@
 <title>짐싸기 체크리스트 · 김석현 개인용</title>
 </head>
 <body>
-<style>
-  :root {
-    --accent:#2f5d3f; --tr:#8a5f2a; --cab:#1552a3; --bp:#6b4a86; --alert:#b3261e;
-    --ink:#16221b; --ink-2:#4b5c51; --ink-3:#7d8d83;
-    --paper:#f2f5f2; --card:#ffffff; --line:#d3ddd6; --band:#e5ede7;
-    --alert-bg:#fbeceb; --ok-bg:#eaf1ec;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --accent:#7cc295; --tr:#cf9f5c; --cab:#79aeee; --bp:#b795d8; --alert:#f08379;
-      --ink:#e6efe9; --ink-2:#a6b7ac; --ink-3:#7e8f85;
-      --paper:#0d1410; --card:#16211a; --line:#293a30; --band:#1c2a22;
-      --alert-bg:#2c1a19; --ok-bg:#152720; }
-  }
-  :root[data-theme="dark"] {
-    --accent:#7cc295; --tr:#cf9f5c; --cab:#79aeee; --bp:#b795d8; --alert:#f08379;
-    --ink:#e6efe9; --ink-2:#a6b7ac; --ink-3:#7e8f85;
-    --paper:#0d1410; --card:#16211a; --line:#293a30; --band:#1c2a22;
-    --alert-bg:#2c1a19; --ok-bg:#152720;
-  }
-  :root[data-theme="light"] {
-    --accent:#2f5d3f; --tr:#8a5f2a; --cab:#1552a3; --bp:#6b4a86; --alert:#b3261e;
-    --ink:#16221b; --ink-2:#4b5c51; --ink-3:#7d8d83;
-    --paper:#f2f5f2; --card:#ffffff; --line:#d3ddd6; --band:#e5ede7;
-    --alert-bg:#fbeceb; --ok-bg:#eaf1ec;
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--paper); color:var(--ink);
-    font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
-    font-size:15.5px; line-height:1.55; font-variant-numeric:tabular-nums;
-    -webkit-text-size-adjust:100%; }
-  .wrap { max-width:44rem; margin:0 auto; padding:2.2rem 1.1rem 4rem;
-          display:flex; flex-direction:column; gap:1.4rem; }
 
-  header { border-bottom:2px solid var(--accent); padding-bottom:.6rem; }
-  .eyebrow { font-size:.71rem; font-weight:800; letter-spacing:.15em;
-             text-transform:uppercase; color:var(--accent); }
-  h1 { margin:.35rem 0 .4rem; font-size:clamp(1.35rem,5vw,1.85rem);
-       font-weight:800; letter-spacing:-.02em; }
-  .sub { margin:0; color:var(--ink-2); font-size:.9rem; }
-  .private { display:inline-block; margin-top:.45rem; font-size:.75rem; font-weight:700;
-             color:var(--alert); border:1px solid var(--alert); border-radius:4px;
-             padding:.1rem .4rem; }
-
-  h2 { margin:0 0 .2rem; font-size:1.05rem; font-weight:800; letter-spacing:-.01em; }
-  h2 .n { font-size:.72rem; font-weight:800; color:var(--ink-3);
-          letter-spacing:.06em; margin-right:.45rem; }
-  h3 { margin:.9rem 0 .3rem; font-size:.88rem; font-weight:800; color:var(--ink-2);
-       letter-spacing:.02em; }
-  p { margin:0 0 .55rem; } p:last-child { margin-bottom:0; }
-
-  .box { background:var(--card); border:1px solid var(--line); border-radius:8px;
-         padding:.85rem .95rem; border-left:5px solid var(--c,var(--accent)); }
-  .box.tr { --c:var(--tr); } .box.cab { --c:var(--cab); } .box.bp { --c:var(--bp); }
-  .where { font-size:.78rem; color:var(--ink-3); margin-bottom:.55rem; }
-  .spec { font-size:.78rem; font-weight:700; color:var(--c,var(--accent)); margin-bottom:.5rem; }
-
-  ul.ck { list-style:none; margin:0; padding:0; }
-  ul.ck li { position:relative; padding:.24rem 0 .24rem 1.45rem;
-             border-bottom:1px dotted var(--line); font-size:.93rem; }
-  ul.ck li:last-child { border-bottom:none; }
-  ul.ck li::before { content:""; position:absolute; left:0; top:.5em;
-    width:.72rem; height:.72rem; border:1.5px solid var(--ink-3); border-radius:3px; }
-  ul.ck li small { color:var(--ink-3); font-size:.82rem; }
-  ul.ck li .q { color:var(--tr); font-weight:700; }
-  ul.ck.two { column-count:2; column-gap:1.4rem; }
-  ul.ck.two li { break-inside:avoid; }
-  ul.plain { margin:0; padding-left:1.1rem; font-size:.9rem; }
-  ul.plain li { margin-bottom:.2rem; }
-
-  .warn { background:var(--alert-bg); border:1px solid var(--alert); border-left-width:5px;
-          border-radius:8px; padding:.85rem .95rem; }
-  .warn .tag, .rev .tag, .must .tag { display:block; font-size:.7rem; font-weight:800;
-          letter-spacing:.1em; text-transform:uppercase; margin-bottom:.25rem; }
-  .warn .tag { color:var(--alert); }
-  .must { background:var(--ok-bg); border:1px solid var(--accent); border-left-width:5px;
-          border-radius:8px; padding:.85rem .95rem; }
-  .must .tag { color:var(--accent); }
-  .rev { background:var(--card); border:1px dashed var(--tr); border-radius:8px;
-         padding:.85rem .95rem; }
-  .rev .tag { color:var(--tr); }
-
-  .scroll { overflow-x:auto; }
-  table { border-collapse:collapse; width:100%; font-size:.85rem; }
-  th, td { text-align:left; padding:.35rem .5rem; border-bottom:1px solid var(--line);
-           vertical-align:top; }
-  thead th { background:var(--band); font-size:.72rem; font-weight:800;
-             letter-spacing:.04em; color:var(--ink-2); white-space:nowrap; }
-  tbody tr:last-child td { border-bottom:none; }
-  caption { caption-side:bottom; text-align:left; padding-top:.4rem;
-            font-size:.77rem; color:var(--ink-3); }
-
-  strong { font-weight:700; }
-  .hi { color:var(--alert); font-weight:700; }
-  footer { border-top:1px solid var(--line); padding-top:.85rem;
-           font-size:.78rem; color:var(--ink-3); }
-</style>
 
 <div class="wrap">
 
@@ -216,7 +121,7 @@
     <ul class="ck">
       <li>엔화 현금 <strong>15,000~20,000엔</strong> <small>쓸 만큼만 파우치로 옮기고 나머지는 여기에</small></li>
       <li>예비 카드 1장 <small>파우치와 분산</small></li>
-      <li>C to C 케이블 1개 <small>예비용. 맥세이프 배터리로 충전하니 실제로는 안 씁니다</small></li>
+      <li><strong>C to C 케이블 1개</strong> <small>아이폰은 맥세이프로 되지만, 오픈이어 이어폰이 USB-C면 이 케이블이 실사용입니다</small></li>
       <li><strong>가민 시계 충전 케이블</strong> <span class="hi">전용선 — 이것만 빠지면 대체 불가</span> <small>GPS를 켜도 2일 가니 8/1 저녁 산장에서 한 번만 충전</small></li>
       <li>아이폰은 맥세이프로 해결 <small>저온에서 무선 충전 효율이 떨어지니 산장 안에서</small></li>
       <li>충전기 본체 + 일본용 변환 어댑터 <small>A타입 100V. 8/2 이후 호텔에서 배터리 재충전용</small></li>
@@ -272,6 +177,7 @@
       <li><strong>턱끈 있는 모자</strong> 1개 <small>산행용. 바라클라바 위에 겹쳐 쓰면 챙으로 얼굴을, 바라클라바로 목과 귀를 가립니다</small></li>
       <li>SPF 립밤 <small>선글라스는 위 안경 항목에</small></li>
       <li>선크림·손소독제 <small>100ml 이하 소분한 것만</small></li>
+      <li><strong>오픈이어 이어폰</strong> + 케이스 <small>주변 소리를 막지 않아 산행에 맞습니다. 충전 단자를 확인하세요 — USB-C면 C to C 케이블이 실제로 쓰입니다</small></li>
       <li>비닐봉지 여러 장</li>
     </ul>
   </div>
@@ -312,7 +218,7 @@
           <tr><td><strong>중간 · 등쪽</strong></td><td><strong>가장 무거운 것</strong><br>어깨날개 사이 높이</td><td><strong>2L 소프트백</strong>(전용 칸), 행동식 전체, 비상식량</td></tr>
           <tr><td><strong>중간 · 바깥쪽</strong></td><td>중간 무게</td><td><span class="hi">맥세이프 보조배터리 2개</span>, <span class="hi">가민 충전 케이블</span>, 플리스 또는 경량패딩, 위생 파우치(양치소금·손소독제·휴지·<strong>극세사 타월</strong>), 약 파우치, 제습제 4개, 키친타월, 비닐봉지</td></tr>
           <tr><td><strong>위</strong></td><td>자주·급하게<br>꺼내는 것</td><td>방수 자켓, 비닐 바지, 스패츠, 헤드랜턴+예비전지, <strong>팔토시</strong>, <strong>턱끈 모자</strong>, 비상보온포, 휴대용 화장실·지퍼백</td></tr>
-          <tr><td><strong>뚜껑 주머니</strong></td><td>배낭 본체를<br>안 열고</td><td>아래 목록 참고 — 예비 고무마개, 인공눈물, 진통제, 장갑·바라클라바 등</td></tr>
+          <tr><td><strong>뚜껑 주머니</strong></td><td>배낭 본체를<br>안 열고</td><td>아래 목록 참고 — 예비 고무마개, 인공눈물, 진통제, 장갑·바라클라바, <strong>오픈이어 이어폰</strong> 등</td></tr>
           <tr><td><strong>힙벨트 주머니</strong></td><td><strong>걸으면서<br>한 손으로</strong></td><td>SPF 립밤, 선크림 소분, 행동식 1개, 염분탭</td></tr>
           <tr><td><strong>사이드 주머니</strong></td><td>어깨를 돌려<br>또는 동행이</td><td>당일 행동식 여분, 접은 지퍼백, <strong>손을 써야 하는 구간에서 접은 스틱</strong>, 벗은 스패츠</td></tr>
           <tr><td><strong>어깨끈 · 배낭 밖</strong></td><td>손을 안 쓰고<br>바로 닿음</td><td><strong>안경 케이스</strong>(카라비너로 매달기), 곰방울, 호루라기</td></tr>
@@ -336,6 +242,7 @@
       <li><strong>해가 오르면 얼굴을 내려 목만</strong> <small>턱끈 모자와 겹쳐 쓰면 챙이 얼굴을, 바라클라바가 목덜미를 막습니다. 2,900m 자외선에서 목덜미가 가장 많이 탑니다</small></li>
       <li><strong>더우면 벗어 뚜껑 주머니로</strong> <small>땀에 젖으면 헤드밴드로 갈아 씁니다</small></li>
       <li>산장 취침에도 씁니다 <small>다인실에서 보온이 되고 빛도 어느 정도 막아줍니다</small></li>
+      <li><strong>오픈이어 이어폰과 자리가 겹칩니다</strong> <small>귀에 걸치는 형태라 바라클라바 위로 걸면 밀착이 떨어집니다. 새벽에 둘 다 쓸 거면 이어폰을 먼저 걸고 바라클라바를 그 위에 덮으세요</small></li>
     </ul>
 
     <h3>비가 오면 — 입는 순서</h3>
@@ -366,9 +273,10 @@
       <li>휴지, 물티슈 소량</li>
       <li>지퍼백 1~2장 <small>쓰레기, 젖은 것</small></li>
       <li>여분 헤드밴드 1개</li>
+      <li><strong>오픈이어 이어폰</strong> <small>벗으면 케이스에. 귀에 걸치는 형태라 배낭에 넣어두면 눌립니다</small></li>
       <li>장갑, <strong>바라클라바</strong> <small>능선에서 바람이 불면 바로 꺼냅니다. 더워지면 목만 덮게 내려 쓰면 됩니다</small></li>
     </ul>
-    <p style="font-size:.87rem;margin-top:.45rem;margin-bottom:0"><strong>곰방울은 배낭 밖에</strong> 답니다. 안에 있으면 소리가 안 납니다.</p>
+    <p style="font-size:.87rem;margin-top:.45rem;margin-bottom:0"><strong>곰방울은 배낭 밖에</strong> 답니다. 안에 있으면 소리가 안 납니다. <strong>오픈이어는 소리가 밖으로 샙니다</strong> — 다인실에서는 볼륨을 낮추거나 쓰지 않는 편이 낫습니다.</p>
     <div class="warn" style="margin-top:.7rem">
       <span class="tag">캐리어에 두고 오기 쉬운 것</span>
       <p style="margin-bottom:0">배낭을 다 싼 뒤 이 넷을 마지막으로 확인하세요. 산에서 대체가 안 되고, 캐리어는 <strong>8/2 하산 전까지 만나지 못합니다.</strong><br><strong>보조배터리 2개 · 가민 충전 케이블 · 예비 고무마개 · 스패츠</strong></p>

@@ -270,7 +270,7 @@
 
     <div class="chart" style="margin-bottom:.8rem">
       <div class="fig-title">위에서 본 코스 · 3일 진행 방향</div>
-      <svg viewBox="0 0 800 520" role="img" aria-label="중앙알프스 종주 평면 모식도. 시라비타이라에서 로프웨이로 센죠지키에 올라 핫초자카를 거쳐 호켄산장에서 1박, 나카다케와 기소고마가타케를 넘어 니시코마산장에서 2박, 오타루 피난소을 지나 카쓰라고바로 하산.">
+      <svg viewBox="0 0 800 520" role="img" aria-label="중앙알프스 종주 평면 모식도. 시라비타이라에서 로프웨이로 센죠지키에 올라 핫초자카를 거쳐 호켄산장에서 1박, 나카다케와 기소고마가타케를 넘고 기소마에다케를 왕복한 뒤 니시코마산장에서 2박, 오타루 피난소을 지나 카쓰라고바로 하산.">
 
         <!-- north arrow -->
         <g transform="translate(64,452)">
@@ -302,6 +302,9 @@
         <path d="M308 372 L296 320 L286 268 L330 240 L372 214 L398 200 L420 190"
               fill="none" stroke="var(--ridge)" stroke-width="4.5"
               stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- kiso-maedake round trip (Day 2 addition) -->
+        <path d="M286 268 L252 262 L222 270" fill="none" stroke="var(--ridge)"
+              stroke-width="2.5" stroke-dasharray="5 4"/>
         <!-- shogi-gashira spur -->
         <path d="M420 190 L432 165" fill="none" stroke="var(--ridge)"
               stroke-width="2" stroke-dasharray="4 4"/>
@@ -324,6 +327,8 @@
         </g>
         <!-- summit -->
         <polygon points="286,258 293,271 279,271" fill="var(--ridge)"/>
+        <polygon points="222,260 228,271 216,271" fill="var(--ridge)"/>
+        <rect x="245" y="256" width="10" height="10" rx="2" fill="var(--alert)" opacity=".75"/>
         <!-- memorial -->
         <rect x="395" y="197" width="6" height="6" fill="var(--ink-2)"/>
         <!-- huts -->
@@ -340,9 +345,11 @@
           <text x="294" y="360" text-anchor="end" font-weight="700">호켄산장 2,865 · 1박</text>
           <text x="284" y="318" text-anchor="end">나카다케 2,925</text>
           <text x="272" y="246" text-anchor="end" font-weight="700">기소고마가타케 2,956</text>
+          <text x="210" y="266" text-anchor="end">기소마에다케 2,826</text>
+          <text x="210" y="281" text-anchor="end" font-size="11.5" fill="var(--ink-3)">타마노쿠보산장 2,760</text>
           <text x="324" y="234" text-anchor="end">마노세</text>
           <text x="380" y="232">하치고메 2,700</text>
-          <text x="424" y="150" text-anchor="end">쇼시카시라야마 2,730</text>
+          <text x="424" y="150" text-anchor="end">쇼기가시라야마 2,730</text>
           <text x="430" y="208" font-weight="700">니시코마산장 2,686 · 2박</text>
           <text x="546" y="164">오타루 피난소 2,050</text>
           <text x="608" y="132">우마가에시</text>
@@ -358,7 +365,8 @@
           <text x="478" y="431" fill="var(--contour)" text-anchor="middle" font-weight="400" font-size="11.5">950m 상승</text>
           <text x="338" y="412" fill="var(--route)">1:00</text>
           <text x="258" y="294" fill="var(--ridge)" text-anchor="end">1:15</text>
-          <text x="356" y="256" fill="var(--ridge)">1:30</text>
+          <text x="356" y="256" fill="var(--ridge)">1:50</text>
+          <text x="210" y="296" fill="var(--ridge)" text-anchor="end" font-size="11.5">왕복 1:35</text>
           <text x="492" y="186" fill="var(--contour)">3:00 · 1,418m 하강</text>
         </g>
 
@@ -373,14 +381,15 @@
         <span><i class="dot hut"></i>산장 숙박</span>
         <span><i class="dot summit"></i>정상</span>
         <span><i class="swatch dash"></i>로프웨이</span>
-        <span><i class="swatch grey"></i>지도에 없는 길 · 확인 필요</span>
+        <span><i class="swatch grey"></i>노가이케 우회로 · 비권장</span>
+        <span>점선 초록 · 왕복 구간</span>
         <span>방위 북쪽 위 · 모식도이며 실제 축척은 아닙니다</span>
       </div>
     </div>
 
     <div class="chart">
       <div class="fig-title">옆에서 본 코스 · 고도 변화</div>
-      <svg viewBox="0 0 800 250" role="img" aria-label="3일간 등반 고도 단면도. 시라비타이라 1662m에서 로프웨이로 센죠지키 2612m, 핫초자카를 올라 호켄산장 2865m 1박, 기소고마가타케 2956m를 넘어 니시코마산장 2686m 2박, 카쓰라고바 1268m로 하산.">
+      <svg viewBox="0 0 800 250" role="img" aria-label="3일간 등반 고도 단면도. 시라비타이라 1662m에서 로프웨이로 센죠지키 2612m, 핫초자카를 올라 호켄산장 2865m 1박, 호켄다케 2931m와 기소고마가타케 2956m를 넘고 기소마에다케 2826m를 왕복한 뒤 니시코마산장 2686m 2박, 카쓰라고바 1268m로 하산.">
         <!-- day bands -->
         <rect x="0"   y="0" width="232" height="215" fill="var(--band)" opacity=".55"/>
         <rect x="232" y="0" width="285" height="215" fill="var(--band)" opacity=".22"/>
@@ -404,7 +413,10 @@
         <!-- walking route, coloured by day -->
         <g fill="none" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
           <path d="M110 66.7 L150 62.6 L210 43.9 L225 42.8" stroke="var(--route)"/>
-          <path d="M225 42.8 L290 37.1 L345 34.2 L400 44.4 L450 58.3 L480 59.2 L505 59.6" stroke="var(--ridge)"/>
+          <path d="M225 42.8 L242 39.9 L259 42.8 L302 37.1 L345 34.2" stroke="var(--ridge)"/>
+          <path d="M345 34.2 L370 52.7 L392 46.5 L414 52.7 L436 34.2" stroke="var(--ridge)"
+                stroke-dasharray="5 4" stroke-width="3"/>
+          <path d="M436 34.2 L462 44.4 L482 58.3 L495 59.2 L505 59.6" stroke="var(--ridge)"/>
           <path d="M505 59.6 L545 67.8 L650 119.8 L720 152.8 L780 193.6" stroke="var(--contour)"/>
         </g>
 
@@ -415,6 +427,8 @@
         </g>
         <!-- summit -->
         <polygon points="345,26 350,36 340,36" fill="var(--ridge)"/>
+        <polygon points="242,32 246,41 238,41" fill="var(--ridge)"/>
+        <polygon points="392,38 396,47 388,47" fill="var(--ridge)"/>
 
         <!-- labels -->
         <g fill="var(--ink-2)" font-size="11">
@@ -422,6 +436,9 @@
           <text x="112" y="82">센죠지키 2,612</text>
           <text x="225" y="30"  text-anchor="middle">호켄산장 2,865 · 1박</text>
           <text x="345" y="20"  text-anchor="middle">기소고마가타케 2,956</text>
+          <text x="248" y="88"  text-anchor="middle" font-size="10">호켄다케 2,931</text>
+          <text x="392" y="62"  text-anchor="middle" font-size="10">기소마에다케 2,826</text>
+          <text x="392" y="76"  text-anchor="middle" font-size="9.5" fill="var(--ink-3)">타마노쿠보 2,760</text>
           <text x="505" y="80"  text-anchor="middle">니시코마산장 2,686 · 2박</text>
           <text x="650" y="136" text-anchor="middle">오타루 피난소 2,050</text>
           <text x="780" y="209" text-anchor="end">카쓰라고바 1,268</text>
@@ -436,6 +453,7 @@
       <div class="legend">
         <span><i class="swatch dash"></i>로프웨이 · 7분 30초에 950m 상승</span>
         <span><i class="dot hut"></i>산장 숙박</span>
+        <span>점선은 왕복 구간</span>
         <span>세로축은 고도, 가로축은 대략적인 소요 시간</span>
       </div>
     </div>
